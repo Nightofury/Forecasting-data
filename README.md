@@ -4,7 +4,7 @@ This project is an end-to-end analytical application designed to model, analyze,
 
 Overview
 
-The application integrates R-based analytics with machine learning workflows to generate demand forecasts and visualize trends over time. A Shiny-based interface enables interactive exploration of the results.
+The application integrates R-based analytics with machine learning workflows to generate demand forecasts and visualize trends over time. A Shiny-based interface enables interactive exploration of results, simulating real-world economic analytics systems.
 
 Features
 Interactive dashboard built using Shiny
@@ -28,23 +28,52 @@ XGBoost, scikit-learn, pandas, NumPy
 Shiny for dashboard development
 Plotly for interactive visualization
 Project Structure
-
 economic-insights-dashboard/
+  app.R
+  demand_forecast.py
+  README.md
+Installation and Setup
+1. Clone the Repository
+git clone https://github.com/your-username/economic-insights-dashboard.git
+cd economic-insights-dashboard
+2. Install R Dependencies
 
-app.R
-demand_forecast.py
-README.md
+Open R or VS Code terminal and run:
+
+install.packages(c(
+  "shiny",
+  "tidyverse",
+  "lubridate",
+  "timetk",
+  "modeltime",
+  "tidymodels",
+  "plotly"
+))
+3. Install Python Dependencies
+
+Make sure Python is installed, then run:
+
+pip install pandas numpy scikit-learn xgboost matplotlib
+4. Run the Application
+
+Start R and run:
+
+library(shiny)
+runApp("app.R")
+
+The application will launch in your browser.
+
 Methodology
 
-The project uses a combination of time series feature engineering and gradient boosting techniques to model demand patterns. Seasonal effects are captured using Fourier terms and temporal features such as day, month, and year. The trained model is then used to forecast future demand over a defined horizon.
+The project applies time series feature engineering combined with gradient boosting techniques to model demand patterns. Seasonal effects are captured using Fourier transformations and temporal features such as day, week, and month. The trained model is used to forecast future demand over a defined horizon.
 
 Use Cases
 Demand forecasting and trend analysis
 Economic data exploration
-Business decision support
-Time series modeling demonstrations
+Business intelligence applications
+Time series modeling and experimentation
 Key Highlights
-Combines R and Python in a single analytical workflow
-Focuses on scalability and reproducibility
-Demonstrates practical application of machine learning in forecasting
-Provides a foundation for extending into production-grade systems
+Combines R and Python in a unified workflow
+Demonstrates real-world forecasting techniques
+Emphasizes clarity, reproducibility, and modular design
+Designed to simulate production-level analytical systems
